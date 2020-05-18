@@ -19,7 +19,7 @@ Tuesday: Zoom 9:30AM - 10:30AM
 
 Wednesday: posted video
 
-Thursday: Zoom 9:30AM - 10:30AM
+Thursday: Zoom TBD
 
 Friday: posted video
 

@@ -12,10 +12,15 @@
 ### Class Time & Location
 Section 102:  
 Time/Day: 
+
 Monday: posted video
+
 Tuesday: Zoom 9:30AM - 10:30AM
+
 Wednesday: posted video
+
 Thursday: Zoom 9:30AM - 10:30AM
+
 Friday: posted video
 
 

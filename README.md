@@ -5,20 +5,25 @@
 #### Dr. Drew Wham 
     Office: 22c Sheilds Building
     email: fcw5014 [at] psu [dot] edu
-    Office Hours (22c Sheilds Building):
-    Wed 12-1
-    Friday 12-1
-    By appointment
+    Office Hours (Zoom by appointment):
+    
 
 
 ### Class Time & Location
-Section 1:  
-Time/Day: MoTuWeThFr 9:35AM - 10:50AM 
-Location: Stuckeman Family Building 144
+Section 102:  
+Time/Day: 
+Monday: posted video
+Tuesday: Zoom 9:30AM - 10:30AM
+Wednesday: posted video
+Thursday: Zoom 9:30AM - 10:30AM
+Friday: posted video
+
+
+Location: See Canvas for Zoom link
 
 
 ### Laptops 
-Laptops: Bring a laptop to class each day if you have one. Please let me know if you do not have a personal laptop.
+Laptops: Your are expected to have a computer for class each day. Please let me know if you do not have a personal computer.
 
 ## Resources
 ### Textbooks
@@ -43,7 +48,7 @@ Follow the below links download and install the appropriate version of R, R Stud
 * [Atom](https://atom.io)
 
 ## Communication
-### Piazza
+### Kaggle
 
 We will be using Piazza for class-related discussion and questions, to help you benefit from each other’s questions and the collective knowledge of your classmates and professor. Questions can be posted to the entire class (for content-related questions). I encourage you to ask questions if you are struggling to understand a concept, and to answer your classmates’ questions when you can. Note that you may choose to post questions or comments to Piazza anonymously if you wish. Piazza may also be used for course announcements.
 
@@ -57,23 +62,19 @@ Most issues about classroom activities can be posted to Piazza, but you should u
 Learning outcomes will be assessed based on performance in each of the following categories accompanied by their impact on the overall grade:
 
 * 40% Weekly Activities (in-class and HW)
-* 15% Capstone Projects
-* 35% Exams (Midterm + Final)
-* 10% Reading Quizzes
+* 40% Exams (Midterm + Final, 20% each)
+* 20% Weekly Quizzes
 
 
 
-### In-Class Assignments
+### Weekly Activities
 
-Weekly in-class assignments may include an activity or a quiz assigned and completed in part or whole during class. The format and length of in-class assignments will vary as warranted by the subject matter each week, although each assignments will be given the same weight toward the overall grade. There are no make-up assignments.
+Weekly assignments may include an activity assigned and completed in part or whole during class. The format and length of in-class assignments will vary as warranted by the subject matter each week, although each assignments will be given the same weight toward the overall grade. There are no make-up assignments.
 
 ### Reading Quizzes
 
 Reading quizzes will be due before class in order to assess comprehension of the reading assignment that will be discussed each week. This allows students to see new content and concepts for the first time at their own pace in order to more effectively use class time to emphasize main points, clear up confusion, etc. The goal of the reading quiz is to hold students accountable for completing the reading each week before class.
 
-### Homework
-
-Weekly homework assignments will be due before class in order to assess understanding and content mastery. Students are encouraged to work together on homework assignments, but each student must hand in their own work. Late homework is accepted for one week after the original due date and scored using a 50% penalty.
 
 ## Course Description and Objectives
 ### Description

@@ -1,5 +1,5 @@
 # this is a vector
-Vec <- 7
+Vec <- 6
 # number vector
 num_Vec<-c(3,6,5,1)
 # this is a vector of logical statements

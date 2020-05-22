@@ -19,4 +19,4 @@ library(data.table)
 # your homework is to run these scripts to install packages and get all of the data for this class
 #  it will take some time to download all of the data
 source("./Lectures/required/requirements.R")
-source("./Lectures/Data/download_data.R")
+

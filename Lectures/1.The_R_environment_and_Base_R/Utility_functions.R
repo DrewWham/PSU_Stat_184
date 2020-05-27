@@ -19,22 +19,22 @@ paste0(hello," ",names_vec)
 
 num_series<-1:10
 
-num_series2<-seq(0,100,10)
+num_series2<-seq(from=0,by=10,to=100)
 
 hello_10<-rep("Hello",10)
 
 rnorm(10,1,1)
 
-sample(num_series,5)
+sample(num_series,15)
 
 rand_samp<-sample(num_series,15,replace = T)
 
 max(rand_samp)
 min(rand_samp)
 
-lenght(rand_samp)
+length(rand_samp)
 
-unique(rand_samp)
+length(unique(rand_samp))
 
 sum(2,5)
 
@@ -50,6 +50,7 @@ sum(a,b)
 
 a+b
 
+d<-c(5,8,5,NA,7)
 
-
+sum(d,na.rm=T)
 

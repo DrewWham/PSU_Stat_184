@@ -1,6 +1,4 @@
 library(data.table)
-library(rvest)
-library(reshape2)
 library(ggplot2)
 library(jsonlite)
 
@@ -129,7 +127,7 @@ bernoulli_trials<-function(n,sample_sizes){
 	return(out_DT)
 }
 
-system.time(bernoulli_DT<-bernoulli_trials(5000,c(5,10,50,100,1000,10000)))
+system.time(bernoulli_DT<-bernoulli_trials(50000,c(5,10,50,100,1000,10000)))
 
 
 fast_bernoulli_trials<-function(n,sample_sizes){
@@ -139,7 +137,7 @@ fast_bernoulli_trials<-function(n,sample_sizes){
 	return(result)
 }
 
-system.time(fast_bernoull_DT<-fast_bernoulli_trials(5000,c(5,10,50,100,1000,10000)))
+system.time(fast_bernoull_DT<-fast_bernoulli_trials(50000,c(5,10,50,100,1000,10000)))
 
 
 

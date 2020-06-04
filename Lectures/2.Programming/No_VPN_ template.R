@@ -22,7 +22,7 @@ submitCode256<-function(user_id,x){
 
 submitCode5<-function(user_id,x){
   set.seed(4)
-  size<-256
+  size<-5
   code<-sample(c(1,0),size,replace=T)
   sub_code<-as.numeric(strsplit(x,"")[[1]])
   percent<-sum(code==sub_code)/size

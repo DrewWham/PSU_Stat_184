@@ -44,3 +44,29 @@ Avg_Delay_tab<-dcast(WF,Origin + UniqueCarrier~.,mean,value.var= c("DepDelay"))
 setnames(Avg_Delay_tab,".","Average_Delay")
 
 fwrite(Avg_Delay_tab,"Avg_Delay_tab.csv")
+
+
+# Practice questions: 
+
+# 1) What was the average DepDelay for flights leaving 'SFO'?
+
+# 2) How many flights originated out of the Charleston SC airport 'CHS'
+
+# 3) How many unique airports did flights leaving the university park airport fly to?
+
+# 4) Whats the average airtime for a flight between SFO and ATL?
+
+# 5) Considering only the New York city area airports (John F. Kennedy, LaGuardia and Newark Liberty), which airport 
+# has the largest average departure delay
+
+# 6) Considering only the New York city area airports, which airport has the largest number of unique destinations?
+
+# 7) Considering only the airports in this dataset with more than 1000 flights, which airport has the lowest average DepDelay?
+
+
+
+
+
+
+
+

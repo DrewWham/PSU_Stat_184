@@ -8,14 +8,16 @@
 # you can also use this line of code which I have tested on macs but may have issues on Windows
 source("../Lectures/Data/download_flights.R")
 
+library(data.table)
+
 # This reads in the flight data and stores it as an object called 'DT'
-DT<-fread("../Lectures/Data/Flights/2008.csv")
+DT<-fread("../Data/Flights/2008.csv")
 # This reads in the data about airports and stores it as an object called 'AP'
-AP<-fread("../Lectures/Data/Flights/airports.csv")
+AP<-fread("../Data/Flights/airports.csv")
 # sometimes data files are large and you might want to just load a subset to investigate
 # use the 'nrows' argument to bring a few rows in
 
-DT_subset<-fread("../Lectures/Data/Flights/2008.csv",nrows=100)
+DT_subset<-fread("../Data/Flights/2008.csv",nrows=100)
 
 # We can now look at the data with some useful functions
 
@@ -35,7 +37,7 @@ tail(DT)
 str(DT)
 
 # we can write out data with the fwrite command
-fwrite(DT_subset, "./Lectures/Data/Flights/subset_2008.csv")
+fwrite(DT_subset, "../Data/Flights/subset_2008.csv")
 
 
 # Subsetting a data.table

@@ -76,7 +76,7 @@ delay_tab_no_NA<-delay_tab[!is.na(delay_tab$CarrierDelay)]
 
 # get the average DepDelay
 
-mean(delay_tab_no_NA$DepDelay)
+mean(delay_tab$DepDelay,na.rm=T)
 
 # or
 

@@ -11,21 +11,23 @@ AP<-fread("../Data/Flights/airports.csv")
 #We will use two methods
 
 #data.table has built in aggregation function
-WF[,.(Avg_Delay=mean(DepDelay)),by=Origin]
+DT[Origin %in% c('BWI','IAD'),.(Avg_Delay=mean(DepDelay,na.rm=T)),by=c('Origin','Dest')]
 
 #dcast offeres a larger set of reshaping options
-Avg_Delay_tab<-dcast(WF,Origin ~ .,mean,value.var= c("DepDelay"))
+Avg_Delay_tab<-dcast(DT,Origin ~ .,mean,na.rm=T,value.var= c("DepDelay"))
 #dcast allows you to define multiple groupings
-Avg_Delay_tab<-dcast(WF,Origin ~ UniqueCarrier,mean,value.var= c("DepDelay"))
+Avg_Delay_tab<-dcast(DT,Origin ~ UniqueCarrier,mean,na.rm=T,value.var= c("DepDelay"))
 
 #this is the same information in tidy format
-Avg_Delay_tab<-dcast(WF,Origin + UniqueCarrier~.,mean,value.var= c("DepDelay"))
+Avg_Delay_tab<-dcast(DT,Origin + UniqueCarrier~.,mean,na.rm=T,value.var= c("DepDelay"))
 
 #rename the '.' column
 setnames(Avg_Delay_tab,".","Average_Delay")
 
-fwrite(Avg_Delay_tab,"Avg_Delay_tab.csv")
+fwrite(Avg_Delay_tab,"../Data/Flights/Avg_Delay_tab.csv")
 
+
+dcast(DT,Origin ~ UniqueCarrier,fun=list(mean,max),na.rm=T,value.var= list("DepDelay","ArrDelay"))
 
 # Practice questions: 
 

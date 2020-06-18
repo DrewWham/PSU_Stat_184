@@ -7,7 +7,7 @@ library(data.table)
 # first major difference is how data is read into R
 system.time(DF<-read.csv("../Data/Flights/2008.csv"))
 system.time(DT<-fread("../Data/Flights/2008.csv"))
-AP<-fread("./Data/airports.csv")
+AP<-fread("../Data/Flights/airports.csv")
 
 # notice the last line of the str for the DF and the DT
 str(DF)
@@ -22,7 +22,9 @@ str(DT)
 system.time(Univ_Park_AP <- DT[Origin == "SCE"])
 
 # you can tell it to make it a key
-setkey(DT,Origin)
+setkey(DT,Origin,Dest)
+
+setindex(DT,TailNum)
 
 # notice the order is now changed
 str(DT)
@@ -41,6 +43,9 @@ DT[,.(mean_depdelay=mean(DepDelay,na.rm=T)),by=Origin]
 
 DT[,.(mean_depdelay=mean(DepDelay,na.rm=T)),by=Origin][order(-mean_depdelay)]
 
+
+DT[Origin %in% c("SFO","IAD","BWI")][,.(mean_depdelay=mean(DepDelay,na.rm=T)),by=Origin]
+
 # scale up and apply a function to multiple columns
 
 Avg_delay_tab<-dcast(DT,Origin + UniqueCarrier~.,mean,na.rm=T,value.var= c("DepDelay","ArrDelay","CarrierDelay","WeatherDelay","NASDelay","SecurityDelay","LateAircraftDelay"))
@@ -50,9 +55,3 @@ Avg_delay_tab<-dcast(DT,Origin + UniqueCarrier~.,mean,na.rm=T,value.var= c("DepD
 m_Avg_delay_tab<-melt(Avg_delay_tab,id=c("Origin","UniqueCarrier"))
 
 
-str(AP)
-str(DT)
-
-setnames(AP,"iata_code","Origin")
-AP$Origin<-as.character(AP$Origin)
-DF$Origin<-as.character(DF$Origin)

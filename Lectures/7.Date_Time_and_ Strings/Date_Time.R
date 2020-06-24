@@ -4,27 +4,29 @@ library(ggplot2)
 
 
 #This reads in the flight data and stores it as an object called 'DT'
-DT<-fread("./Lectures/Data/BikeShare/Trips.csv")
+DT<-fread("../Data/BikeShare/Trips.csv")
 
 #look at the data type for each coloumn
 str(DT)
 
 #notice that sdate and edate are not data/time objects
 #we will attempt to use as_date
-test<-as_date(DT$sdate)
+test<-as_datetime(DT$sdate)
 head(test)
 
-#notice that it did not parse correctly
+#alternatively
 test2<-ymd_hms(DT$sdate)
 head(test2)
 
 #that looks like it did work lets do the same thing to the real data
-DT$sdate<-ymd_hms(DT$sdate)
+DT$sdate<-as_datetime(DT$sdate)
 DT$edate<-ymd_hms(DT$edate)
 
 #now  lets look at the data type again
 str(DT)
 
+DT$Day_num<-wday(DT$sdate)
+DT$Day<-wday(DT$sdate,label = T)
 
 #we can now extract units from the date/time object
 DT$Day<-wday(DT$sdate,label = T,abbr = F)

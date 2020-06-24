@@ -4,7 +4,7 @@ library(ggplot2)
 # What is the relationship between Airport size and Delay?
 
 #This reads in the flight data and stores it as an object called 'DT'
-DT<-fread("./Lectures/Data/Flights/2008.csv")
+DT<-fread("../Data/Flights/2008.csv")
 
 #lets subset out the columns that have to do with types of delays
 Delay_DT<-DT[,c("Origin","CarrierDelay","WeatherDelay","NASDelay","SecurityDelay","LateAircraftDelay")]

@@ -53,12 +53,6 @@ Follow the below links download and install the appropriate version of R, R Stud
 * [Atom](https://atom.io)
 
 ## Communication
-### Piazza
-
-We will be using Piazza for class-related discussion and questions, to help you benefit from each other’s questions and the collective knowledge of your classmates and professor. Questions can be posted to the entire class (for content-related questions). I encourage you to ask questions if you are struggling to understand a concept, and to answer your classmates’ questions when you can. Note that you may choose to post questions or comments to Piazza anonymously if you wish. Piazza may also be used for course announcements.
-
-Do Not use Piazza for issues related to your grade or other private matters (not even an instructor post); email those questions or comments to the instructor directly or discuss them in person.
-
 ### Email
 
 Most issues about classroom activities can be posted to Piazza, but you should use email (or a conversation in person) for all personal or private matters.

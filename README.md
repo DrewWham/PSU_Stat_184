@@ -55,7 +55,7 @@ Follow the below links download and install the appropriate version of R, R Stud
 ## Communication
 ### Email
 
-Most issues about classroom activities can be posted to Piazza, but you should use email (or a conversation in person) for all personal or private matters.
+Most issues about classroom activities in class, but you should use email (or a conversation in person) for all personal or private matters.
 
 ### Grading
 Learning outcomes will be assessed based on performance in each of the following categories accompanied by their impact on the overall grade:

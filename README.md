@@ -10,7 +10,7 @@
 
 
 ### Class Time & Location
-Section 102:  
+Section 101:  
 Time/Day: 
 
 Monday:  Zoom 9:30AM - 10:30AM

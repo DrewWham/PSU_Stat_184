@@ -13,15 +13,15 @@
 Section 102:  
 Time/Day: 
 
-Monday: posted video
+Monday:  Zoom 9:30AM - 10:30AM
 
 Tuesday: Zoom 9:30AM - 10:30AM
 
-Wednesday: posted video
+Wednesday:  Zoom 9:30AM - 10:30AM
 
-Thursday: Zoom TBD
+Thursday:  Zoom 9:30AM - 10:30AM
 
-Friday: posted video
+Friday:  Zoom 9:30AM - 10:30AM
 
 
 Location: See Canvas for Zoom link

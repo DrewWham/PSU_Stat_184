@@ -1,3 +1,5 @@
+library(data.table)
+
 # ".csv" files are a common way to store data, we can load ".csv" files with the fread() function:
 # first, you will need to download the flights data
 source("./Lectures/Data/download_flights.R")
@@ -40,7 +42,7 @@ SCE<-DT[Origin == "SCE"]
 
 # use a vector to subset all rows where a value is in the vector
 
-WF<-DT[Origin %in% c('DCA','IAD','BWI')]
+WF<-DT[Origin %in% c("DCA","IAD","BWI")]
 
 #or
 
@@ -55,8 +57,12 @@ delay_tab<-WF[,.(Origin,ArrDelay,DepDelay,CarrierDelay,WeatherDelay,NASDelay,Sec
 head(delay_tab)
 
 # we can also sort
-
+delay_tab$orig_order<-1:dim(delay_tab)[1]
 delay_tab<-delay_tab[order(DepDelay)]
+
+delay_tab<-delay_tab[order(orig_order)]
+
+delay_tab<-delay_tab[order(Origin,DepDelay,ArrDelay)]
 # or
 delay_tab<-delay_tab[order(-DepDelay)]
 
@@ -68,24 +74,24 @@ delay_tab<-delay_tab[!is.na(delay_tab$CarrierDelay)]
 
 # get the average DepDelay
 
-mean(delay_tab$DepDelay)
+mean(delay_tab$DepDelay,na.rm=T)
 
 # or
 
-delay_tab[,mean(DepDelay)]
+delay_tab[,mean(DepDelay,na.rm=T)]
 
 # also this method will let you build a new data table, it is less useful when you are just getting a single value
 
-delay_tab[,.(Avg_DepDelay=mean(DepDelay))]
+delay_tab[,.(Avg_DepDelay=mean(DepDelay,na.rm=T))]
 
-delay_tab[,.(Avg_ArrDelay=mean(ArrDelay),Avg_DepDelay=mean(DepDelay))]
+delay_tab[,.(Avg_ArrDelay=mean(ArrDelay,na.rm=T),Avg_DepDelay=mean(DepDelay,na.rm=T))]
 
 #however, it is very useful once you start using the "by" operation
 
-delay_tab[,.(Avg_ArrDelay=mean(ArrDelay),Avg_DepDelay=mean(DepDelay)), by=Origin]
+delay_tab[,.(Avg_ArrDelay=mean(ArrDelay,na.rm=T),Avg_DepDelay=mean(DepDelay,na.rm=T)), by=Origin]
 
 
-
+#DT[row,col,by]
 
 # In class work: Build a R script to answer these questions. A canvas quiz will be available for you to enter your answers tomorrow
 # in class. The quiz will be due Sunday by midnight. 

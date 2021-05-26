@@ -1,23 +1,15 @@
 # ".csv" files are a common way to store data, we can load ".csv" files with the fread() function:
-# first, you will need to download the flights data. Going to this address in a chrome browser
-# will download the data. In other browsers you may need to "save as" then save as a .csv .
-
-# https://s3.amazonaws.com/stat.184.data/Flights/2008.csv
-# https://s3.amazonaws.com/stat.184.data/Flights/airports.csv
-
-# you can also use this line of code which I have tested on macs but may have issues on Windows
-source("../Lectures/Data/download_flights.R")
-
-library(data.table)
+# first, you will need to download the flights data
+source("./Lectures/Data/download_flights.R")
 
 # This reads in the flight data and stores it as an object called 'DT'
-DT<-fread("../Data/Flights/2008.csv")
+DT<-fread("./Lectures/Data/Flights/2008.csv")
 # This reads in the data about airports and stores it as an object called 'AP'
-AP<-fread("../Data/Flights/airports.csv")
+AP<-fread("./Lectures/Data/Flights/airports.csv")
 # sometimes data files are large and you might want to just load a subset to investigate
 # use the 'nrows' argument to bring a few rows in
 
-DT_subset<-fread("../Data/Flights/2008.csv",nrows=100)
+DT_subset<-fread("./Lectures/Data/Flights/2008.csv",nrows=100)
 
 # We can now look at the data with some useful functions
 
@@ -37,7 +29,7 @@ tail(DT)
 str(DT)
 
 # we can write out data with the fwrite command
-fwrite(DT_subset, "../Data/Flights/subset_2008.csv")
+fwrite(DT_subset, "./Lectures/Data/Flights/subset_2008.csv")
 
 
 # Subsetting a data.table
@@ -72,34 +64,53 @@ delay_tab<-delay_tab[order(-DepDelay)]
 # notice that some flights have NA for all of their delay-type values even though they were delayed
 # we can remove all of them by subsetting with a logical statement
 
-delay_tab_no_NA<-delay_tab[!is.na(delay_tab$CarrierDelay)]
+delay_tab<-delay_tab[!is.na(delay_tab$CarrierDelay)]
 
 # get the average DepDelay
 
-mean(delay_tab$DepDelay,na.rm=T)
+mean(delay_tab$DepDelay)
 
 # or
 
-delay_tab_no_NA[,mean(DepDelay)]
+delay_tab[,mean(DepDelay)]
 
 # also this method will let you build a new data table, it is less useful when you are just getting a single value
 
-delay_tab[,.(Avg_DepDelay=mean(DepDelay,na.rm=T))]
+delay_tab[,.(Avg_DepDelay=mean(DepDelay))]
 
-delay_tab[,.(Avg_ArrDelay=mean(ArrDelay,na.rm=T),Avg_DepDelay=mean(DepDelay,na.rm=T))]
+delay_tab[,.(Avg_ArrDelay=mean(ArrDelay),Avg_DepDelay=mean(DepDelay))]
 
 #however, it is very useful once you start using the "by" operation
 
-delay_tab[,.(Avg_ArrDelay=mean(ArrDelay,na.rm=T),Avg_DepDelay=mean(DepDelay,na.rm=T)), by=Origin]
+delay_tab[,.(Avg_ArrDelay=mean(ArrDelay),Avg_DepDelay=mean(DepDelay)), by=Origin]
 
-# frequently you will want to count how many observations of comething are in a dataset, data.table
-# provides a conveniant notation for that:
 
-# total number of flights leaving each airport
-DT[,.N,by=Origin]
 
-#total number of flights between each airport
-DT[,.N,by=c('Origin','Dest')]
+
+# In class work: Build a R script to answer these questions. A canvas quiz will be available for you to enter your answers tomorrow
+# in class. The quiz will be due Sunday by midnight. 
+
+# 1) What was the average DepDelay for flights leaving 'SFO'?
+
+# 2) How many flights originated out of the Charleston SC airport 'CHS'
+
+# 3) How many unique airports did flights leaving the university park airport fly to?
+
+# 4) Whats the average airtime for a flight between SFO and ATL?
+
+# 5) Considering only the New York city area airports (John F. Kennedy, LaGuardia and Newark Liberty), which airport 
+# has the largest average departure delay
+
+# 6) Considering only the New York city area airports, which airport has the largest number of unique destinations?
+
+# 7) Considering only the airports in this dataset with more than 1000 flights, which airport has the lowest average DepDelay?
+
+
+
+
+
+
+
 
 
 

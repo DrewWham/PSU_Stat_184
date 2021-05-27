@@ -7,8 +7,8 @@ library(data.table)
 
 
 # first major difference is how data is read into R
-system.time(DF<-read.csv("./Data/2008.csv"))
-system.time(DT<-fread("./Data/2008.csv"))
+system.time(DF<-read.csv("./Lectures/Data/Flights/2008.csv"))
+system.time(DT<-fread("./Lectures/Data/Flights/2008.csv"))
 AP<-fread("./Data/airports.csv")
 
 # notice the last line of the str for the DF and the DT

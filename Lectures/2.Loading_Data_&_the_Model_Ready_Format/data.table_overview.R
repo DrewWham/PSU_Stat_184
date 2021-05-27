@@ -42,27 +42,3 @@ DT[,.(mean_depdelay=mean(DepDelay,na.rm=T)),by=Origin]
 # sort and chain
 
 DT[,.(mean_depdelay=mean(DepDelay,na.rm=T)),by=Origin][order(-mean_depdelay)]
-
-# scale up and apply a function to multiple columns
-
-Avg_delay_tab<-dcast(DT,Origin + UniqueCarrier~.,mean,na.rm=T,value.var= c("DepDelay","ArrDelay","CarrierDelay","WeatherDelay","NASDelay","SecurityDelay","LateAircraftDelay"))
-
-# go from wide to long format
-
-m_Avg_delay_tab<-melt(Avg_delay_tab,id=c("Origin","UniqueCarrier"))
-
-
-str(AP)
-str(DT)
-
-setnames(AP,"iata_code","Origin")
-AP$Origin<-as.character(AP$Origin)
-DF$Origin<-as.character(DF$Origin)
-
-
-setkey(DT,Origin)
-setkey(AP,Origin)
-
-# merge the datasets
-
-all_data<-merge(DT,AP,all.x=T)

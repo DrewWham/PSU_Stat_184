@@ -6,6 +6,7 @@ library(data.table)
 
 # extra reading and examples:
 # https://cloud.r-project.org/web/packages/data.table/vignettes/datatable-reshape.html
+# Chapter 12 in the text: https://r4ds.had.co.nz/tidy-data.html
 
 
 #This reads in the flight data and stores it as an object called 'DT'

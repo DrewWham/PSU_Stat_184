@@ -13,5 +13,5 @@ download.file(url="https://s3.amazonaws.com/stat.184.data/PUBG/match_stats.csv",
 
 # Yelp
 download.file(url="https://s3.amazonaws.com/stat.184.data/Yelp/yelp_academic_dataset_business.csv",destfile='./Lectures/Data/Yelp/yelp_academic_dataset_business.csv', method='curl')
-download.file(url="https://s3.amazonaws.com/stat.184.data/Yelp/yelp_academic_dataset_review.csv",destfile='./Lectures/Data/Yelp/yelp_academic_dataset_review.csv', method='curl')
+#download.file(url="https://s3.amazonaws.com/stat.184.data/Yelp/yelp_academic_dataset_review.csv",destfile='./Lectures/Data/Yelp/yelp_academic_dataset_review.csv', method='curl')
 download.file(url="https://s3.amazonaws.com/stat.184.data/Yelp/yelp_academic_dataset_reviews_no_text.csv",destfile='./Lectures/Data/Yelp/yelp_academic_dataset_reviews_no_text.csv', method='curl')

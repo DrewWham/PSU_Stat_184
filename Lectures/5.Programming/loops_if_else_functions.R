@@ -31,6 +31,7 @@ length(out_vector)
 
 
 #if else statement
+set.seed(3)
 total<-10
 set<-c(0,NA,1)
 rand_samp<-sample(set,total,replace=T)
@@ -103,7 +104,7 @@ system.time(x<-power_two(50000))
 fast_power_two<-function(n){
 	out_vector<-NULL
 	i<-1:n
-	out_vector<-sapply(i,FUN=function(i){2^i})
+	out_vector<-sapply(i,FUN=function(x){2^x})
 	return(out_vector)
 }
 
@@ -141,25 +142,63 @@ system.time(fast_bernoull_DT<-fast_bernoulli_trials(50000,c(5,10,50,100,1000,100
 
 
 
-ggplot(out_DT,aes(x=frequency,col=as.factor(sample_size)))+geom_density()
+ggplot(fast_bernoull_DT,aes(x=frequency,col=as.factor(sample_size)))+geom_density()
 
 
 #a classroom exercise and a challange:
+source("code_scripts.R")
 
 #This function takes 2 arguments, a username and code made of zeros and ones. it will reply back with a % correct
 #write a function to solve the 10 unit binary code
-submitCode5<-function(user_id,x){
-  url <- paste0("https://dsdemo.vmhost.psu.edu/api/nlp/CodeBreak_5?user_id=",user_id,"&x=",x)
-  read_json(url)[[1]]
-}
+submitCode5(user_id,x)
 
 #as a challange i have set up another binary code that is 256 units long. I will give you a 100% on your lowest homework
 #if you break it in less than 512 submissions, be careful to listen to the rules given in class.
-submitCode256<-function(user_id,x){
-  url <- paste0("https://dsdemo.vmhost.psu.edu/api/nlp/CodeBreak_256?user_id=",user_id,"&x=",x)
-  read_json(url)[[1]]
-}
+submitCode256(user_id,x)
 
 #example
 
-submitCode5("fcw5014","11111")
+
+#start with all 1s
+code_1<-c(1,1,1,1,1)
+sub_code_1<-paste(code_1,collapse = "")
+
+#get % correct
+
+perc_1<-submitCode5("fcw5014",sub_code_1)
+
+#for each position change to 0 and get new percent correct
+
+for (i in 1:5){
+  sub_code_1<-paste(code_1,collapse = "")
+  perc_1<-submitCode5("fcw5014",sub_code_1)
+  code_1[i]<-0
+  sub_code_1<-paste(code_1,collapse = "")
+  perc_2<-submitCode5("fcw5014",sub_code_1)
+  
+  if (perc_1>perc_2){
+    code_1[i]<-1
+    }
+
+}
+
+
+
+#keep code with best % correct
+
+# move on to next position
+
+#profit
+
+
+
+
+
+
+
+
+
+
+
+
+
